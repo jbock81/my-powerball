@@ -470,30 +470,35 @@ box-sizing: border-box;
   background-color: #0071BC;
   background-image: url('../images/ball_blue.png');
   background-size: cover;
+  animation: r 6s infinite linear;
 }
 
 .red{
   background-color: #ED1C24;
   background-image: url('../images/ball_red.png');
   background-size: cover;
+  animation: r 6s infinite linear;
 }
 
 .yellow{
   background-color: #E99F00;
   background-image: url('../images/ball_yellow.png');
   background-size: cover;
+  animation: r 6s infinite linear;
 }
 
 .green{
   background-color: #8CC63F;
   background-image: url('../images/ball_green.png');
   background-size: cover;
+  animation: r 6s infinite linear;
 }
 
 .black{
   background-color: #666666;
   background-image: url('../images/ball_gray.png');
   background-size: cover;
+  animation: r 6s infinite linear;
 }
 
 /*
