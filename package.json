@@ -1,7 +1,6 @@
 {
   "name": "powerball",
-  "version": "0.1.0",
-  "homepage": "http://localhost/powerball",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "private": true,
