@@ -64,15 +64,16 @@ class Results extends React.Component {
               <Row className="justify-content-between">
                 {
                   round.numbers.map((number) => {
-                    return <Col key={"num_" + number} xs={1} className="ball-container">
+                    return <Col key={"num_" + number} xs={1}>
                       <div className={this.getBallClassName(number)}>
                         {number}
                       </div>
                     </Col>
                   })
                 }
-
-                <Col xs={1} className="ball-container">
+                 {/* className="ball-container" */}
+                 {/* className="ball-container" */}
+                <Col xs={1}>
                   <div className="d-flex align-items-center justify-content-center ball black">
                     {round.powerball}
                   </div>

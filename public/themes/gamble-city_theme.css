@@ -443,8 +443,8 @@ box-sizing: border-box;
 
 }
 
-.ball-container{
-}
+/* .ball-container{
+} */
 
 .ball{
   border-radius: 50%;
@@ -731,7 +731,7 @@ font-weight: bold;
 color: var(--brand-color);
 }
 
-@media only screen and (min-width: 768px) {    
+@media only screen and (min-width: 900px) {    
 
 .game-container{
   margin-top: 13vmin;
@@ -805,14 +805,14 @@ max-width: 99%;
 }
 
 .raffle{
-  width: 20vmax;
-  height: 20vmax;
+  width: 32vmax;
+  height: 32vmax;
 
 }
 
 .raffle-inner{
-  width: 19vmax;
-  height: 19vmax;
+  width: 30vmax;
+  height: 30vmax;
 }
 
 .footer{
@@ -876,5 +876,19 @@ to{
   }
   100% {
     transform: scale(1, 1);
+  }
+}
+
+@media only screen and (max-width: 80rem) {
+  @keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(2, 2);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
   }
 }
