@@ -68,29 +68,38 @@ export default class Draw extends React.Component {
     }
 
     startAnime() {
-        setTimeout(() => {
-            this.setState({ revealFirstNumber: 'd-flex' })
-        }, 1000)
+        // setTimeout(() => {
+        //     this.setState({ revealFirstNumber: 'd-flex' })
+        // }, 1000)
 
-        setTimeout(() => {
-            this.setState({ revealSecondNumber: 'd-flex' })
-        }, 2000)
+        // setTimeout(() => {
+        //     this.setState({ revealSecondNumber: 'd-flex' })
+        // }, 2000)
 
-        setTimeout(() => {
-            this.setState({ revealThirdNumber: 'd-flex' })
-        }, 3000)
+        // setTimeout(() => {
+        //     this.setState({ revealThirdNumber: 'd-flex' })
+        // }, 3000)
 
-        setTimeout(() => {
-            this.setState({ revealFourthNumber: 'd-flex' })
-        }, 4000)
+        // setTimeout(() => {
+        //     this.setState({ revealFourthNumber: 'd-flex' })
+        // }, 4000)
 
-        setTimeout(() => {
-            this.setState({ revealFifthNumber: 'd-flex' })
-        }, 5000)
+        // setTimeout(() => {
+        //     this.setState({ revealFifthNumber: 'd-flex' })
+        // }, 5000)
 
-        setTimeout(() => {
-            this.setState({ revealPowerball: 'd-flex' })
-        }, 6000)
+        // setTimeout(() => {
+        //     this.setState({ revealPowerball: 'd-flex' })
+        // }, 6000)
+
+        this.setState({
+            revealFirstNumber: 'd-flex',
+            revealSecondNumber: 'd-flex',
+            revealThirdNumber: 'd-flex',
+            revealFourthNumber: 'd-flex',
+            revealFifthNumber: 'd-flex',
+            revealPowerball: 'd-flex'
+        })
 
         setTimeout(() => {
             this.setState({
@@ -102,7 +111,7 @@ export default class Draw extends React.Component {
                 revealPowerball: 'd-none',
                 resultAnime: false
             })
-        }, 8500)
+        }, 13500)
 
     }
 
@@ -115,18 +124,18 @@ export default class Draw extends React.Component {
 
     getBallClassName(ball) {
         if (ball >= 0 && ball < 8) {
-            return "ball yellow"
+            return "ball yellow-zoom bzoom"
         }
         if (ball > 7 && ball < 15) {
-            return "ball blue"
+            return "ball blue-zoom bzoom"
         }
         if (ball > 14 && ball < 23) {
-            return "ball red"
+            return "ball red-zoom bzoom"
         }
         if (ball > 22 && ball < 29) {
-            return "ball green"
+            return "ball green-zoom bzoom"
         }
-        return "ball black text-black"
+        return "ball black-zoom text-black bzoom"
     }
 
     render() {
@@ -151,10 +160,10 @@ export default class Draw extends React.Component {
             <Row>
                 <Col className="d-flex align-items-center justify-content-center rounded-circle raffle">
                     <Row>
-                        {/* for finished rounds */}
-                        <Col className={this.state.winningNumbers.length > 0 && this.state.resultAnime ? "d-flex align-items-center justify-content-center rounded-circle raffle-inner" : "d-none"}>
-                            <Row xs={10} span={1} className="w-100 d-flex align-items-center justify-content-around roundResults">
-                                <Col xs={1} className={this.getBallClassName(this.state.winningNumbers[0])}>
+                        {/* for finished rounds  roundResults*/}
+                        <Col className={this.state.winningNumbers.length > 0 && this.state.resultAnime ? "d-flex align-items-center justify-content-center rounded-circle raffle-inner raffle-inner-active" : "d-none"}>
+                            <Row xs={10} span={1} className="w-100 d-flex align-items-center justify-content-around">
+                                <Col xs={1} className={`${this.getBallClassName(this.state.winningNumbers[0])}`}>
                                     <span className={`h-100 align-items-center justify-content-center ${this.state.revealFirstNumber}`}>{this.state.winningNumbers[0]}</span>
                                 </Col>
                                 <Col xs={1} className={`${this.getBallClassName(this.state.winningNumbers[1])}`}>
@@ -169,14 +178,15 @@ export default class Draw extends React.Component {
                                 <Col xs={1} className={`${this.getBallClassName(this.state.winningNumbers[4])}`}>
                                     <span className={`h-100 align-items-center justify-content-center ${this.state.revealFifthNumber}`}>{this.state.winningNumbers[4]}</span>
                                 </Col>
-                                <Col xs={1} className={`ball black`}>
+                                <Col xs={1} className={`ball black-zoom bzoom`}>
                                     <span className={`h-100 align-items-center justify-content-center ${this.state.revealPowerball}`}>{this.state.winningNumbers[5]}</span>
                                 </Col>
                             </Row>
                         </Col>
 
-                        {/* for running rounds */}
-                        <Col className={this.state.resultAnime ? "d-none" : this.state.count[0] > 0 ? "align-items-center justify-content-center rounded-circle raffle-inner raffle-inner-active" : "align-items-center justify-content-center rounded-circle raffle-inner"}>
+                        {/* for running rounds */} 
+                        {/* raffle-inner-active */}
+                        <Col className={this.state.resultAnime ? "d-none" : this.state.count[0] > 0 ? "align-items-center justify-content-center rounded-circle raffle-inner" : "align-items-center justify-content-center rounded-circle raffle-inner"}>
                             <Row xs={12} className="align-items-end h-50">
                                 <Col xs={12} className="d-flex justify-content-center next-round">
                                     {this.state.nextRoundId ? <FormattedMessage id="app.round"
